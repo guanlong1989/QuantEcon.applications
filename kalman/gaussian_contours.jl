@@ -6,7 +6,7 @@ Plots of bivariate Gaussians to illustrate the Kalman filter.
 using PyPlot
 
 # Quick meshgrid function
-meshgrid(x::LinSpace, y::LinSpace) = (repmat(x, 1, length(y))',
+meshgrid(x::AbstractVector, y::AbstractVector) = (repmat(x, 1, length(y))',
                                   repmat(y, 1, length(x)))
 
 # bivariate normal function. I could call plt.mlab, but this is more fun!
