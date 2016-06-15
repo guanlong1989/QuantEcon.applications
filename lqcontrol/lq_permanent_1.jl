@@ -27,7 +27,8 @@ xp, up, wp = compute_sequence(lq, x0)
 # == Convert back to assets, consumption and income == #
 assets = squeeze(xp[1, :], 1)            # a_t
 c = squeeze(up .+ c_bar, 1)              # c_t
-income = squeeze(wp[1, 2:end] .+ mu, 1)  # y_t
+income = squeeze(wp[1, 2:end] .+ mu, 1)  # y_t        
+####### Comment: wp[1,2:end] actually is 1x0 Array{Any,2}, since typeof{wp} is Arrary{Any,1}. Hence, following this setup, income is empty.
 
 # == Plot results == #
 n_rows = 2
